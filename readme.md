@@ -43,8 +43,7 @@ REST API для управления департаментами, их стру
     docker-compose up -d
 
 ## 4.Приложение будет доступно по адресу: http://localhost:8000
-
-# Для доработки, тестирования проект можно запустить локально, после создания контейнера:
+ Для доработки, тестирования проект можно запустить локально, после создания контейнера:
 
 ## 1.Создать виртуальное окружение
     python -m venv venv
@@ -65,37 +64,6 @@ REST API для управления департаментами, их стру
 | PATCH    | /departments/{id}    | Переместить/обновить подразделение    |
 | DELETE    | /departments/{id}    | Удалить департамент    |
 
-### Структура проекта
-project/
-├── app/
-│ ├── Department/
-│ │ ├── model.py
-│ │ ├── dao.py
-│ │ ├── router.py
-│ │ └── schemas.py
-│ ├── Employee/
-│ │ ├── model.py
-│ │ ├── dao.py
-│ │ ├── router.py
-│ │ └── schemas.py
-│ ├── tools/
-│ │ ├── tree.py
-│ │ └── custom_exceptions.py
-│ ├── main.py
-│ ├── config.py
-│ ├── logger.py
-│ └── base_dao.py
-├── database/
-│ └── postgres.py
-├── migrations/
-├── tests/
-│ └── test_validation.py
-├── logs/
-│ └── app.log
-├── docker-compose.yml
-├── Dockerfile
-├── req.txt
-└── README.md
 
 ### Тестирование
 # 1.Запустить тест

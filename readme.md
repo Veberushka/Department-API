@@ -1,9 +1,9 @@
-# Тестовое задание Department
+### Тестовое задание Department
 
 REST API для управления департаментами, их структурой и сотрудниками этих подразделений. Реализована древовидная структура,
 каскадное удаление и перемещение сотрудников.
 
-## Технологический стек:
+### Технологический стек:
 - **Python** -3.12-slim
 - **Docker & Docker Compose**
 - **PostgreSQL** - 17.4 База данных
@@ -12,18 +12,18 @@ REST API для управления департаментами, их стру
 - **Alembic** - миграция
 - **Pytest** - тестирование
 
-## Необходимые требования:
+### Необходимые требования:
 - Python 3.12-slim
 - Docker & Docker Compose
 - PostgreSQL 17.4
 - 300Мб свободной оперативной памяти
 
 ### Запуск:
-# 1.Клонировать репозиторий
+## 1.Клонировать репозиторий
     git clone <url>
     cd <project-name>
 
-# 2. Создание .env и .env.container в корне проекта
+## 2. Создание .env и .env.container в корне проекта
     пример
     .env
     DB_HOST = 'localhost'
@@ -39,21 +39,21 @@ REST API для управления департаментами, их стру
     DB_USER = 'amin'
     DB_PASSWORD = 'its_my_password'
 
-# 3.Создать образ,создать контейнер и запустить его
+## 3.Создать образ,создать контейнер и запустить его
     docker-compose up -d
 
-# 4.Приложение будет доступно по адресу: http://localhost:8000
+## 4.Приложение будет доступно по адресу: http://localhost:8000
 
-### Для доработки, тестирования проект можно запустить локально, после создания контейнера:
+# Для доработки, тестирования проект можно запустить локально, после создания контейнера:
 
-# 1.Создать виртуальное окружение
+## 1.Создать виртуальное окружение
     python -m venv venv
     venv\Scripts\activate
 
-# 2.Установка зависимостей
+## 2.Установка зависимостей
     pip install -r req.txt
 
-# 3. Запуск
+## 3. Запуск
     Запуск проекта происходит из файла app.main.py
 
 ### API Эндпоинты
@@ -68,33 +68,33 @@ REST API для управления департаментами, их стру
 ### Структура проекта
 project/
 ├── app/
-│   ├── Department/          # Модуль подразделений
-│   │   ├── model.py        # SQLAlchemy модель
-│   │   ├── dao.py          # Data Access Layer
-│   │   ├── router.py       # API эндпоинты
-│   │   └── schemas.py      # Pydantic схемы
-│   ├── Employee/            # Модуль сотрудников
-│   │   ├── model.py        # SQLAlchemy модель
-│   │   ├── dao.py          # Data Access Layer
-│   │   ├── router.py       # API эндпоинты
-│   │   └── schemas.py      # Pydantic схемы
-│   ├── tools/               # Утилиты
-│   │   ├── tree.py         # Работа с деревом
-│   │   └──custom_exceptions.py          # Кастомные ошибки
-│   ├── main.py             # Точка входа
-│   ├── config.py           # Конфигурация
-│   ├── logger.py           # Логирование
-│   └── base_dao.py         # Базовый DAO класс
+│ ├── Department/
+│ │ ├── model.py
+│ │ ├── dao.py
+│ │ ├── router.py
+│ │ └── schemas.py
+│ ├── Employee/
+│ │ ├── model.py
+│ │ ├── dao.py
+│ │ ├── router.py
+│ │ └── schemas.py
+│ ├── tools/
+│ │ ├── tree.py
+│ │ └── custom_exceptions.py
+│ ├── main.py
+│ ├── config.py
+│ ├── logger.py
+│ └── base_dao.py
 ├── database/
-│   └── postgres.py         # Подключение к БД
-├── migrations/              # Alembic миграции
-├── tests/                   # Тесты
-│   └── test_validation.py
-├── logs/                    # Логи (создается автоматически)
-│   └── app.log              # файл, где храняться логи
+│ └── postgres.py
+├── migrations/
+├── tests/
+│ └── test_validation.py
+├── logs/
+│ └── app.log
 ├── docker-compose.yml
 ├── Dockerfile
-├── req.txt                  # Зависимости
+├── req.txt
 └── README.md
 
 ### Тестирование

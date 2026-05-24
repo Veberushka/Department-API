@@ -1,0 +1,29 @@
+
+# Виртуальное окружение
+.venv/
+venv/
+
+# Alembic
+alembic/__pycache__/
+migrations/__pycache__/
+
+# Кэш Python
+__pycache__/
+*.pyc
+
+# Настройки IDE
+.vscode/
+.idea/
+
+# Временные файлы
+*.log
+*.tmp
+
+# Конфиденциальные данные
+.env
+.env.container
+*.env.local
+
+неиспользуемое.py
+logs
+logs/app.log

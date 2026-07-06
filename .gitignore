@@ -25,5 +25,7 @@ __pycache__/
 *.env.local
 
 неиспользуемое.py
-logs
+logs/
+!logs/.gitkeep
 logs/app.log
+*.log

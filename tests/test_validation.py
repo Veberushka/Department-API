@@ -5,7 +5,7 @@ import sys
 parent_dir=Path(__file__).parent.parent
 sys.path.append(str(parent_dir))
 
-from app.Department.schemas import DepartamentDelete,Departamentupdate,DepartmentCreate
+from app.Department.schemas import DepartmentDelete,Departmentupdate,DepartmentCreate
 from pydantic import ValidationError
 
 
@@ -39,28 +39,28 @@ def test_DepartmentCreate_config():
 
 def test_DepartamentDelete_mode_valid():
     with pytest.raises(ValidationError):
-        DepartamentDelete(mode='Test')
+        DepartmentDelete(mode='Test')
 
 def test_DepartamentDelete_reassign_valid():
-    test=DepartamentDelete(mode='reassign',reassign_to_department_id=2)
+    test=DepartmentDelete(mode='reassign',reassign_to_department_id=2)
     assert test.mode == 'reassign' and test.reassign_to_department_id == 2
 
 def test_DepartamentDelete_reassign_to_department_id_invalid():
     with pytest.raises(ValidationError):
-        DepartamentDelete(reassign_to_department_id='Test')
+        DepartmentDelete(reassign_to_department_id='Test')
 
 def test_DepartamentDelete_config():
     with pytest.raises(ValidationError):
-        DepartamentDelete(mode='reassign',Test='2')
+        DepartmentDelete(mode='reassign',Test='2')
 
 def test_Departamentupdate_config():
     with pytest.raises(ValidationError):
-        Departamentupdate(Test='2')
+        Departmentupdate(Test='2')
 
 def test_Departamentupdate_validation_name():
     with pytest.raises(ValidationError):
-        Departamentupdate(name=True)
+        Departmentupdate(name=True)
 
 def test_Departamentupdate_validation_parent_id():
     with pytest.raises(ValidationError):
-        Departamentupdate(parent_id='Test')
+        Departmentupdate(parent_id='Test')

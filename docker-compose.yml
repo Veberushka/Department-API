@@ -47,6 +47,22 @@ services:
       retries: 5
     restart: unless-stopped
   
+  postgres_test:
+    image: postgres:17.4
+    container_name: postgres__test
+    environment:
+      POSTGRES_USER: amin
+      POSTGRES_PASSWORD: its_my_password
+      POSTGRES_DB: test_db
+      PGDATA: /var/lib/postgresql/data/data_test
+    ports:
+      - "5434:5432" 
+    volumes:
+      - pgdata_test:/var/lib/postgresql/data/data_test
+    restart: unless-stopped
+
 volumes:
   pgdata:
+    driver: local
+  pgdata_test:
     driver: local

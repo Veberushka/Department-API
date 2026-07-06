@@ -1,5 +1,5 @@
 from sqlalchemy import select,update,delete
-from sqlalchemy.orm import selectinload,joinedload
+from sqlalchemy.orm import selectinload
 from sqlalchemy.exc import SQLAlchemyError
 from database.postgres import async_session_maker
 
